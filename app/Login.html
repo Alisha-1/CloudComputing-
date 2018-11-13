@@ -1,0 +1,33 @@
+<div class="boxshadow center-block">
+	<h4 style="text-align: center; margin-bottom: 22px"> Login with</h4>
+	
+	<div class="center">
+        <!-- <a href="#" class="google btn center-block " style="width: 215px;">
+          <i class="fa fa-google fa-fw"></i> Google
+		 </a> -->
+		 <img ng-click="glogin()" src="sign-in-button.png" style="width: 30%; display: block; margin-left: 35% ">
+
+		 <!-- <button class="btn btn-info" style="margin-top: 4px;" ng-click="gLogin()"> <i class="fa fa-google fa-fw"></i> Google</button><br><br> -->
+	</div>
+	
+	
+	<h5 class="text-center" style="color: #787676"> or </h5>
+
+	
+	<form class="fillinbox  center-block" style="margin-top: 20px;" >
+		<div class="alert alert-danger" role="alert" ng-if="errors">
+			<div>{{ errors }}</div>
+		</div>
+
+		<input class="fillinbox" ng-model="credentials.username" type="email" placeholder="Email or username"  required style="width: 250px; height: 40px;"/><br>
+		<input class="fillinbox" ng-model="credentials.password" type="password" placeholder="Password" required style="width: 250px;  height: 40px;"/><br>
+	
+		<!-- Go to function in Login Controller -->
+		<button class="btn btn-info" style="margin-top: 4px;" ng-click="login()">Login</button><br><br>
+		
+		<p>Not a member?  <a href="#/SignUp" style="color:dodgerblue"> Sign up here</p></p>
+
+	</form>
+</div>
+	
+

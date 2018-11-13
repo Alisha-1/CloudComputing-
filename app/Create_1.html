@@ -1,0 +1,153 @@
+<div>
+	<div class="container boxshadow " ng-if="activePage == 0">
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+				20%
+			</div>
+		</div>
+		<div class="center">
+			<div id="text">
+				<br><h4>Upload <b style="color: #21BDC1">multiple</b> pictures or videos from gallery</h4>
+			</div>
+			<div id="upload" class="row">
+				<!-- Go to create Contoller to function fileUpload -->
+				<button class="btn btn-info button" style="background-color : #0E1D37; margin-top: 17px; margin-bottom: 200px;" onclick="document.getElementById('fileInput').click()">
+				Upload </button>
+				<input type="file" class="file-input" id="fileInput" onchange="angular.element(this).scope().fileUpload(this.files)" />
+			</div>
+			<div class="row" id="text1">
+				<ul class="nav navbar-nav center">
+					<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4"><span class="glyphicon glyphicon-picture" style="font-size:20px;">
+						Gallery</span></div>
+					<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4"> <span class="glyphicon glyphicon-camera" style="font-size:20px;">
+						Photo</span></div>
+					<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4"> <span class="glyphicon glyphicon-facetime-video" style="font-size:20px;">
+						Video</span></div>
+
+				</ul>
+			</div>
+			<div id="buttons" class="row" style="display: none">
+				<div class="row>">
+					<p class="center" style="height: 340px; width:620px; background-color: darkgray; "></p>
+				</div>
+
+				<div class="row>">
+					<button ng-click="navCancel()" class="btn btn-info button col-md-6" style="margin-top: 50px; margin-bottom:20px">Cancel
+						</button>
+					<!--<button  ng-click="nextPage()" class="btn btn-info button col-md-6" style="margin-top: 50px; margin-bottom: 20px"  > Save </button>-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container boxshadow " ng-if="activePage == 1">
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+				40%
+			</div>
+		</div>
+		<div class="center ">
+
+			<div>
+				<h4 class="fs-title">Edit</h4>
+			</div>
+
+			<div class="row>">
+				<img style="height: 340px; width:620px;" ng-src="{{ currentImageURL }}" />
+			</div>
+
+			<div class="row">
+				<button ng-click="previousPage()" class="btn btn-info button col-md-6" style="margin-top: 50px; margin-bottom: 20px"> Back</button>
+				<button ng-click="DonePage()" class="btn btn-info button col-md-6" style="margin-top: 50px; margin-bottom: 20px"> Done
+					</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="container boxshadow" ng-if="activePage == 2">
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+				60%
+			</div>
+		</div>
+
+		<div class="center ">
+			<div>
+				<h4 class="fs-title" style=margin-top:30px>Add description</h4>
+				<h5 class="fs-subtitle">Describe the moment in the picture </h5>
+				<textarea class="resizetextbox" rows="5" ng-model="images[imageIndex].description" placeholder="description" maxlength="100"></textarea>
+			</div>
+
+			<div>
+				<h4 class="fs-title" style="margin-top: 20px">Set date</h4>
+				<h5 class="fs-subtitle" style="margin-bottom: 20px">Set when to open the time capsule</h5>
+				<input class="newinput" id="date" type="date" ng-model="tc.date" />
+			</div>
+
+			<!-- <div id="msg1" style="visibility: hidden">
+					<h5 style="color:red">* Enter valid date i.e current date or date more than current date</h5>
+				</div> -->
+
+			<div>
+				<h4 class="fs-title" style="margin-top: 40px">Set time</h4>
+				<h5 class="fs-subtitle" style="margin-bottom: 20px"> Set what time to open the time capsule</h5>
+				<input class="newinput" id="time" type="time" ng-model="tc.time" />
+			</div>
+
+			<div class="row">
+				<button ng-click="previousPage()" class="btn btn-info button col-md-4" style="margin-top: 50px; margin-bottom: 20px"> Back</button>
+				<button ng-click="nextPage()" class="btn btn-info button col-md-4" style="margin-top: 50px; margin-bottom: 20px"> Next
+					</button>
+				<!-- Go to CreateController uploadMore function -->
+				<button ng-click="uploadMore()" class="btn btn-info button col-md-4" style="margin-top: 50px; margin-bottom: 20px"> Upload
+					More </button>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container boxshadow center" ng-if="activePage == 3">
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:95%">
+				80%
+			</div>
+		</div>
+		<div class="center">
+			<div>
+				<h4 class="fs-title" style="margin-top: 20px">Add recipient</h4>
+				<h5 class="fs-subtitle" style="margin-bottom: 20px">Add their email addresses below who will recieve the time capsule
+					</h5>
+				<input ng-model="tc.recipient" class="fillinbox" type="email" placeholder="john@gmail.com, sam@gmail.com" style="width: 370px;  height: 30px;"
+				/>
+			</div>
+
+			<div>
+				<h4 class="fs-title">Add detail</h4>
+				<h5 class="fs-subtitle">Add some details about the time capsule </h5>
+				<input ng-model="tc.name" class="resizetextbox" type="text" name="name" placeholder="title" />
+			</div>
+			<div>
+				<textarea ng-model="tc.description" class="resizetextbox" rows="5" name="description" placeholder="description" maxlength="100"></textarea>
+			</div>
+
+			<h5 class="fs-title">Upload a cover photo for the time capsule.</h5>
+			<div id="upload" class="row" ng-if="!tc.coverImage">
+				<!-- Upload cover photo go to CreateController-->
+				<button class="btn btn-info button" style="background-color : #0E1D37; margin-top: 17px; margin-bottom: 200px;" onclick="document.getElementById('fileInput2').click()">
+				Upload </button>
+				<input type="file" class="file-input" id="fileInput2" onchange="angular.element(this).scope().coverUpload(this.files)" />
+			</div>
+			<div id="upload" class="row" ng-if="tc.coverImage">
+				<img style="height: 340px; width:620px;" ng-src="{{ tc.coverImage }}" />
+			</div>
+
+			<div class="row">
+				<button ng-click="previousPage()" class="btn btn-info button col-md-6" style="margin-top: 50px; margin-bottom: 20px"> Back</button>
+				<button ng-click="createCapsule(true)" class="btn btn-info button col-md-6" style="margin-top: 50px; margin-bottom: 20px "> Done</button>
+
+			</div>
+		</div>
+	</div>
+
+
+</div>

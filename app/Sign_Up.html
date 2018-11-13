@@ -1,0 +1,42 @@
+<div class="row ">
+	
+	<div class="  center-block boxshadow  "   >
+		<div >
+			<h4 style="text-align: center; margin-bottom: 22px; font-size: 20px;"> Sign up with</h4>
+		
+       			<div class="center">
+						<img ng-click="glogin()" src="sign-in-button.png" style="width: 30%; text-align: center; display: block; margin-left: 35% ">
+
+        			<!-- <a href="#" class="google btn center-block " style="width: 215px;">
+          				<i class="fa fa-google fa-fw"></i> Google
+         			</a> -->
+				</div>
+			
+		<h5 class="text-center" style="color: #787676;  font-size: 18px;"> or </h5>
+	
+		<form class="fillinbox  center-block" style="margin-top: 20px;" >
+
+			<div class="alert alert-danger" role="alert" ng-if="errors">
+				<div>{{ errors }}</div>
+			</div>
+			
+			<input class="fillinbox" ng-model="details.email" type="email" placeholder="Email"  required style="width: 400px; height: 40px; font-size: 17px;"/><br>
+			<input class="fillinbox" ng-model="details.name" type="text" placeholder="Name" required style="width: 400px; height:40px; font-size: 17px;"/><br>
+			<input class="fillinbox" ng-model="details.password" type="password" placeholder="Password" required style="width: 400px;  height: 40px;font-size: 17px;"/><br>
+			<input class="fillinbox" ng-model="details.password2" type="password" placeholder="Confirm Passowrd " required style="width: 400px;  height: 40px; font-size: 17px;" /><br>
+	
+
+            <!--Go to Registration Controller function register  -->
+			<button class="btn btn-info" style="margin-top: 4px;" ng-click="register()">Sign up </button><br><br>
+		
+			<p></p>Already a member?  <a href="#/Login" style="color:dodgerblue"> Login in here</p></p>
+		</form>
+		</div>
+	</div>
+	
+	
+</div>	
+	
+	
+</body>
+</html>

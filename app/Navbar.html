@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+<link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- SCROLLS -->
+<!-- load bootstrap and fontawesome via CDN -->
+<link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+ <!-- SPELLS -->
+ <!-- load angular and angular route via CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+	
+</head>
+
+<body ng-app="scotchApp">
+	
+		
+<div class="Homebar">
+	<nav class="navbar navbar-inverse">
+  		<div class="container-fluid">
+  			  <div class="navbar-header">
+				  
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+       			 	<span class="icon-bar"></span>
+        		 	<span class="icon-bar"></span>
+        			<span class="icon-bar"></span> 
+      			</button>
+		
+  			    <a class="navbar-brand" href="#"><img  style="height: 20px; width: 60px;"src="Images/Logo.jpg"></img></a>
+				<a class="navbar-brand" href="#">Time Capsule</a>
+
+  			  </div>
+			
+		      <div class="collapse navbar-collapse" id="myNavbar">		
+			 <nav ng-controller= "navController">
+  			  <ul class="nav navbar-nav navbar-right"> 	    
+				    <li ><a href="#Create_1"><span class="glyphicon glyphicon-time"></span> Create</a></li>
+  			   	     <li><a href="/capsule"><span class="glyphicon glyphicon-home" ></span> MyCapsules</a></li>
+				     <li><a href="#Main_Home"><span class="glyphicon glyphicon-user"></span> Sign out</a></li>
+  			  </ul>
+			 </nav>
+		     </div>
+       </div>
+	</nav>
+</div>
+	
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <div id="main">
+
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        <div ng-view></div>
+
+    </div>
+
+	
+</body>
+<script src="script.js"></script>
+</html>
