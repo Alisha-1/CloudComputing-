@@ -1,0 +1,170 @@
+@charset "UTF-8";
+/* CSS Document */
+	
+
+	.fakeimg {
+    	background-color: #aaa;
+    	padding: 20px;
+		margin-top: 40px;
+		margin-bottom:20px;
+		height:450px; 
+	}
+
+	.img {
+   		display: block;
+    	margin-left: auto;
+   		margin-right: auto;
+		
+}
+
+
+
+	.dot {
+  	  	height: 50px;
+   	 	width: 50px;
+    	background-color: #bbb;
+    	border-radius: 50%;
+    	display: inline-block;
+		margin-right: 12px;
+	}
+
+	
+   .profilepic{
+		height: 50px;
+  		width: 50px;
+  		background-color: #555;
+  		border-radius: 50%;
+	    float:left;
+	    margin-right: 10px;	
+	}
+
+	.container{
+		max-width: 100%
+	}
+	
+	 .text {
+   		display: block;
+    	margin-left: auto;
+   		margin-right: auto;
+}
+	
+/*.img {
+   		display: block;
+    	margin-left: auto;
+   		margin-right: auto;
+		
+}*/
+
+	.image { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+
+.left {
+    position: absolute;
+    top: 70%;
+    left: 3%;
+	right:5%;
+ /*   transform: translate(-50%, -50%);*/
+
+   width: 100%;
+}
+
+h1 span /* decorating the text within the span tag */
+{ 
+color: white; 
+font-size: 30px; 
+letter-spacing: -1px; 
+background: rgb(0, 0, 0); /* fallback color */ 
+background: rgba(0, 0, 0, 0.7); padding: 10px; 
+}
+h1 span.spacer { padding:0 5px; } /* to pad the background color of text to make it look more elegant */
+
+/* For mobile phones: */
+@media only screen and (max-width: 600px) {
+	.Image {
+   	  height: 600px;
+  }
+	
+	.centered{
+		
+		font-size: 10px;
+	}
+	
+		.centered h1{
+		
+		font-size: 50px;
+	}
+	
+	.centered h2{
+		
+		font-size: 30px;
+	}
+	
+		 .fakeimg{
+		width:450px;
+	}
+	
+	.text{	
+		width: 450px;		
+	} 
+}
+
+
+/* For tablets: */
+@media only screen and (min-width: 576px) {
+	.Image {
+   	 height: 450px;
+	
+  }
+	
+	.centered h1{
+		
+		font-size: 50px;
+	}
+	
+	.centered h2{
+		
+		font-size: 20px;
+	}
+	
+	 .fakeimg{
+		width:600px;
+	}
+	
+	.text{	
+		width: 600px;
+	}
+	
+	
+}
+
+
+
+/* For desktop: */
+@media only screen and (min-width: 768px){
+	.Image {
+    flex: 50%;
+   	 max-width: 100%;
+  }
+	
+	 .fakeimg{
+		width:700px;
+		padding: 5px;
+	}
+	
+	.text{	
+		width: 700px;
+	}
+}
+
+
+
+
+
+
+/*.header{
+	
+	background-image: url(Images/IMG1.jpg);
+	padding:70px;
+}*/
